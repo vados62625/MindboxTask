@@ -5,6 +5,6 @@ Tables:
     ProductsCategories - (PK)Id, (FK)ProductId, (FK)CategoryId
 */
 
-SELECT Products.Name, Categories.Name FROM ProductsCategories AS ProductsCategories
-INNER JOIN Categories AS Categories ON Categories.Id = ProductsCategories.CategoryId
-RIGHT JOIN Products AS Products ON Products.Id = ProductsCategories.ProductId
+SELECT P.Name, C.Name FROM ProductsCategories AS PC
+INNER JOIN Categories AS C ON C.Id = PC.CategoryId
+RIGHT JOIN Products AS P ON P.Id = PC.ProductId
